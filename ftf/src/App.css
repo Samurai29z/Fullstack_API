@@ -76,3 +76,6 @@
   font-size: 3rem;
   color: red;
 }
+#table{
+    border-style: double;
+}

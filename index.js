@@ -2,9 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const corsOptions = {
+  origin: "http://localhost:3000"
+};
+app.use(cors(corsOptions));
 app.set('port', PORT);
 app.set('env', NODE_ENV);
 app.use(logger('tiny'));

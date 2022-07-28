@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Djam from "./components/api/Vue";
 import "./App.css";
-import Get from "./components/request/getrequest";
+import Getrequest from './components/request/getrequest';
+import Reqres from './components/request/reqres';
+import AllStats from './components/request/allgetrequest';
+
 
 function App() {
 
@@ -10,10 +13,6 @@ function App() {
   const display = (i) => {
     setCount(i)
   }
-
-const getid = () => {
-  Get.handleget()
-}
 
 
   return (
@@ -44,7 +43,9 @@ const getid = () => {
       {/* troisieme page */}
       <div className={count === 3 ? "display" : "none"}>
         <p className="container" id="titre">LISTE DES JOUEUR</p>
-      <Get />
+      <Getrequest />
+      <Reqres />
+      <AllStats />
       </div>
     </div>
 
