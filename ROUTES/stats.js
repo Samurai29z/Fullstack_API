@@ -59,7 +59,7 @@ const createStats = async (req, res, next) => {
     try {
         const data = fs.readFileSync(statsFilePath);
         const stats = JSON.parse(data);
-        const newStats = {
+        const newStatsData = {
 
         id: req.body.id,
         wins: req.body.wins,
@@ -69,9 +69,9 @@ const createStats = async (req, res, next) => {
         last_name:req.body.last_name,
         age:req.body.age,
         };
-        stats.push(newStats);
+        statsData.push(newStats);
         fs.writeFileSync(statsFilePath, JSON.stringify(stats));
-        res.status(201).json(newStats);
+        res.status(201).json(newStatsData);
     } catch (e) {
         next(e);
     }

@@ -4,6 +4,8 @@ import "./App.css";
 import Getrequest from './components/request/getrequest';
 import Reqres from './components/request/reqres';
 import AllStats from './components/request/allgetrequest';
+import PutReq from './components/request/updaterequest';
+
 
 
 function App() {
@@ -31,12 +33,14 @@ function App() {
       {/* deuxieme page */}
        <div className={count === 2 ? "display" : "none"} id="page2" >
         <p>FTF ADD YOUR REQUEST</p>
-        <div className="form">
-          <form>
-            <input type="id" placeholder="identifiant du joueur" className="input1" ></input>
-            <input type="url" placeholder="url du joueur" className="input2"></input>
-          </form>
-        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <PutReq />
       </div>
 
 
@@ -47,6 +51,9 @@ function App() {
       <Reqres />
       <AllStats />
       </div>
+
+     
+        
     </div>
 
   );

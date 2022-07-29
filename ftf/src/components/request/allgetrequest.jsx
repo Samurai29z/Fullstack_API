@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import PutReq from './updaterequest'
+
+
+
+
 
 export default class AllStats extends Component {
 
@@ -54,19 +59,22 @@ export default class AllStats extends Component {
                         this.state.output.length === 0 ? this.state.message
                             : this.state.output.map(item =>
                                 <table key={item.id} className='container' id ="table">
-                                    <tr scope="row"><th scope="col"><b>Id:</b></th><th scope="col">{item.id}</th></tr>
-                                    <tr scope="row"><th scope="col"><b>Wins:</b></th><th scope="col">{item.wins}</th> </tr> 
-                                    <tr scope="row"><th scope="col"><b>Losses:</b></th><th scope="col">{item.losses}</th> </tr> 
-                                    <tr scope="row"><th scope="col"><b>Points Scored:</b></th><th scope="col">{item.points_scored}</th></tr> 
-                                    <tr scope="row"><th scope="col"><b>First_name:</b></th><th scope="col">{item.first_name}</th></tr> 
-                                    <tr scope="row"><th scope="col"><b>Last_name:</b></th><th scope="col">{item.last_name}</th></tr> 
-                                    <tr scope="row"><th scope="col"><b>Age:</b></th><th scope="col">{item.age}</th></tr>
-                                    <tr scope="row"><th scope="col"><button>modifier</button></th><th scope="col"><button>suprimer</button></th></tr>
+                                    <p><b>Id:</b> {item.id} </p>
+                                    <p><b>Wins:</b> {item.wins} </p>
+                                    <p><b>Losses:</b> {item.losses} </p>
+                                    <p><b>Points Scored:</b> {item.points_scored} </p>
+                                    <p><b>First_name:</b> {item.points_scored} </p>
+                                    <p><b>Last_name:</b> {item.points_scored} </p>
+                                    <p><b>Age:</b> {item.points_scored} </p>
+                                    <button ><PutReq /></button><button>suprimer</button>
                                     <hr />
                                 </table>
                             )}
                 </div>
+               
             </div>
         )
     }
-}
+    
+  }
+
