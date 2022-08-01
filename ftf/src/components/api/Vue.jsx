@@ -1,6 +1,6 @@
 import React from "react";
 import award from "./images.png"
-import image from "./tof.jpeg"
+// import image from "./tof.jpeg"
 
 const djam = () => {
 
@@ -12,9 +12,9 @@ const djam = () => {
                     <p className="App-link">FEDERATION TOGOLAISE DE FOOTBALL</p>
                 </div>
             </nav>
-            <div className="container">
+            {/* <div className="container">
                     <img src={image} alt="" className="a-image-img" />
-            </div>
+            </div> */}
 
         </div>
     );

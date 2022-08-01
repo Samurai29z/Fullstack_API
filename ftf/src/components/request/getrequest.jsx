@@ -50,12 +50,12 @@ export class Getrequest extends Component {
     render() {
 
         return (
-            <div className='wrapper'>
+            <div className='container'>
                 <div className="tabcontent" id="get">
                     {/* Getting and auto update the input value */}
                     <Input input={this.state.statInput} handleChange={this.handleChange} />
                     {/* This button will execute the send the request */}
-                    <button id="sendGet" onClick={this.handleEnter} >Send</button>
+                    <button id="sendGet" onClick={this.handleEnter} className='btn2'>Send</button>
                 </div>
                 {/* Rendering section */}
                 <ReqRes

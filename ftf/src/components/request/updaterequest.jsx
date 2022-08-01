@@ -128,7 +128,7 @@ export default class PutReq extends Component {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="container">
                 <div className="tabcontent" id="put">
                     <div className="f-section">
                         <InputEl
@@ -151,7 +151,7 @@ export default class PutReq extends Component {
                     <br/>
                     <br/>
                     <br/>
-                    <button onClick={this.handleSubmit}>Send</button>
+                    <button onClick={this.handleSubmit} id='btn2'>Send</button>
                 </div>
                 <Reqres
                     output={this.state.output.length === 0 ? this.state.message
@@ -180,22 +180,22 @@ class InputEl extends Component {
             <div className="f-section">
                 <input type="number" min="1" placeholder="Id"
                     value={this.props.id}
-                    onChange={this.props.handleIdChange} />
+                    onChange={this.props.handleIdChange} /><br/>
                 <input type="number" min="1" placeholder="Wins"
                     value={this.props.wins}
-                    onChange={this.props.handleWinsChange} />
+                    onChange={this.props.handleWinsChange} /><br/>
                 <input type="number" min="1" placeholder="Losses"
                     value={this.props.losses}
-                    onChange={this.props.handleLossesChange} />
+                    onChange={this.props.handleLossesChange} /><br/>
                 <input type="number" min="1" placeholder="Points scored"
                     value={this.props.points}
-                    onChange={this.props.handlePointsChange} />
+                    onChange={this.props.handlePointsChange} /><br/>
                 <input type="name" min="1" placeholder="First name"
                     value={this.props.first}
-                    onChange={this.props.handlePointsChange} />
+                    onChange={this.props.handlePointsChange} /><br/>
                 <input type="name" min="1" placeholder="Last name"
                     value={this.props.last}
-                    onChange={this.props.handlePointsChange} />
+                    onChange={this.props.handlePointsChange} /><br/>
                 <input type="number" min="1" placeholder="Age"
                     value={this.props.age}
                     onChange={this.props.handlePointsChange} />     

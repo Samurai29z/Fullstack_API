@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import PutReq from './updaterequest'
+
 
 
 
@@ -50,8 +50,8 @@ export default class AllStats extends Component {
 
     render() {
         return (
-            <div className='output'>
-                <button onClick={this.handleEnter}>
+            <div className='container'>
+                <button onClick={this.handleEnter} id='btn2'>
                     {this.state.refresh}
                 </button>
                 <div className="eltDiv">
@@ -63,10 +63,10 @@ export default class AllStats extends Component {
                                     <p><b>Wins:</b> {item.wins} </p>
                                     <p><b>Losses:</b> {item.losses} </p>
                                     <p><b>Points Scored:</b> {item.points_scored} </p>
-                                    <p><b>First_name:</b> {item.points_scored} </p>
-                                    <p><b>Last_name:</b> {item.points_scored} </p>
-                                    <p><b>Age:</b> {item.points_scored} </p>
-                                    <button ><PutReq /></button><button>suprimer</button>
+                                    <p><b>First_name:</b> {item.first_name} </p>
+                                    <p><b>Last_name:</b> {item.last_name} </p>
+                                    <p><b>Age:</b> {item.age} </p>
+                                    <button>modifier</button><button onClick={this.handleEnter}>suprimer</button>
                                     <hr />
                                 </table>
                             )}

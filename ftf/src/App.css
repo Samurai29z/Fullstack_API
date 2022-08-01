@@ -18,21 +18,46 @@
 .none{
     display: none;
 }
-.btn1{
+#btn1{
     position: relative;
     z-index: 10;
     background-color: green;
     width: 200px;
     height: 50px;
-    margin-left: 70%;
-    margin-top: 20%;
     border-radius: 50px;
 }
-.btn1:hover{
+#btn1:hover{
     background-color: red;
     
 }
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+input{
+    width: 50%;
+    height: 50px;
+    margin-bottom: 30px;
+}
+#btn2{
+    background-color:yellow;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+}
 .btn2{
+    background-color:yellow;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+}
+/* #fond{
+    background-image:url(components/api/tof.jpeg)
+} */
+
+/* .btn2{
     position: relative;
     z-index: 10;
     background-color: green;
@@ -78,4 +103,4 @@
 }
 #table{
     border-style: double;
-}
+} */
