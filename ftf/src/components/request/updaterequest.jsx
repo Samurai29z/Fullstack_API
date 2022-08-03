@@ -14,9 +14,9 @@ export default class PutReq extends Component {
             wins: '',
             losses: '',
             points: '',
-            First: '',
-            Last: '',
-            Age: '',
+            first: '',
+            last: '',
+            age: '',
             output: [],
             message: ''
         }
@@ -67,7 +67,7 @@ export default class PutReq extends Component {
     }
     handleFirstChange(event) {
         this.setState({
-            First: event.target.value,
+            first: event.target.value,
         })
         this.setState({
             output: [],
@@ -76,7 +76,7 @@ export default class PutReq extends Component {
     }
     handleLastChange(event) {
         this.setState({
-            Last: event.target.value,
+            last: event.target.value,
         })
         this.setState({
             output: [],
@@ -85,7 +85,7 @@ export default class PutReq extends Component {
     }
     handleAgeChange(event) {
         this.setState({
-            Age: event.target.value,
+            age: event.target.value,
         })
         this.setState({
             output: [],
@@ -119,6 +119,7 @@ export default class PutReq extends Component {
         axios(config)
             .then(function (response) {
                 self.setState({ output: response.data })
+                this.setState({ message: 'reussi' })
             })
             .catch(function (error) {
                 this.setState({ message: 'Not Found!' })
@@ -161,9 +162,9 @@ export default class PutReq extends Component {
                                 <p><b>Wins:</b> {item.wins} </p>
                                 <p><b>Losses:</b> {item.losses} </p>
                                 <p><b>Points Scored:</b> {item.points_scored} </p>
-                                <p><b>First_name:</b> {item.First_name} </p>
-                                <p><b>Last_name:</b> {item.Last_name} </p>
-                                <p><b>Age:</b> {item.points_Age} </p>
+                                <p><b>First_name:</b> {item.first_name} </p>
+                                <p><b>Last_name:</b> {item.last_name} </p>
+                                <p><b>Age:</b> {item.age} </p>
                                 <hr />
                             </div>
                         )}
@@ -192,13 +193,13 @@ class InputEl extends Component {
                     onChange={this.props.handlePointsChange} /><br/>
                 <input type="name" min="1" placeholder="First name"
                     value={this.props.first}
-                    onChange={this.props.handlePointsChange} /><br/>
+                    onChange={this.props.handleFirstChange} /><br/>
                 <input type="name" min="1" placeholder="Last name"
                     value={this.props.last}
-                    onChange={this.props.handlePointsChange} /><br/>
+                    onChange={this.props.handleLastChange} /><br/>
                 <input type="number" min="1" placeholder="Age"
                     value={this.props.age}
-                    onChange={this.props.handlePointsChange} />     
+                    onChange={this.props.handleAgeChange} />     
             </div>
         )
     }

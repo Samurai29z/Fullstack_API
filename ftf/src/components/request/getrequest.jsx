@@ -5,7 +5,7 @@ import axios from 'axios'
 export class Getrequest extends Component {
     // Constructor props for GetReq(Accessoires de constructeur pour GetReq)
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             statInput: '',
@@ -62,8 +62,8 @@ export class Getrequest extends Component {
                     output={
                         // Rendering the output
                         this.state.stat.length === 0 ? this.state.message 
-                         :
-                        this.state.stat !== [] ? this.state.stat.map(item =>
+                         :this.state.stat !== [] ? 
+                         this.state.stat.map(item =>
                             <div key={item.id}>
                                 <p><b>Id:</b> {item.id} </p>
                                 <p><b>Wins:</b> {item.wins} </p>

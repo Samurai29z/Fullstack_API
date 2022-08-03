@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 export default class AllStats extends Component {
-
+ // Constructor props for GetReq(Accessoires de constructeur pour GetReq)
     constructor(props) {
         super(props)
 
@@ -21,7 +21,7 @@ export default class AllStats extends Component {
         this.handleRefresh = this.handleRefresh.bind(this)
         this.handleEnter = this.handleEnter.bind(this)
     }
-
+ // function to send the request(fonction pour envoyer la demande)
     handleEnter() {
         this.handleRefresh()
     }
