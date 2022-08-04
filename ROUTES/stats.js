@@ -22,11 +22,6 @@ const getallStats = async (req, res, next) => {
     }
 };
 
-router.route("/api/v1/stats").get(getallStats);
-
-module.exports = router;
-
-
 // recuperer par id
 const getStats = async (req, res, next) => {
     try {
@@ -40,15 +35,12 @@ const getStats = async (req, res, next) => {
             err.status = 404;
             throw err;
         }
-        res.json(playerStats);
+        res.json([playerStats]);
     } catch (e) {
         next(e);
     }
 };
 
-router.route("/api/v1/stats/:id").get(getStats);
-
-module.exports = router;
 
 const statsFilePath = path.join(__dirname, "./stats.json");
 
@@ -59,29 +51,23 @@ const createStats = async (req, res, next) => {
     try {
         const data = fs.readFileSync(statsFilePath);
         const stats = JSON.parse(data);
-        const newStatsData = {
+        const newStats = {
 
-        id: req.body.id,
-        wins: req.body.wins,
-        losses: req.body.losses,
-        points_scored: req.body.points_scored,
-        first_name:req.body.first_name,
-        last_name:req.body.last_name,
-        age:req.body.age,
+            id: req.body.id,
+            wins: req.body.wins,
+            losses: req.body.losses,
+            points_scored: req.body.points_scored,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.age,
         };
-        statsData.push(newStats);
+        stats.push(newStats);
         fs.writeFileSync(statsFilePath, JSON.stringify(stats));
-        res.status(201).json(newStatsData);
+        res.status(201).json([newStats]);
     } catch (e) {
         next(e);
     }
 };
-
-router.route("/api/v1/stats").post(createStats);
-
-
-
-
 //PUT Method
 const updateStats = async (req, res, next) => {
     try {
@@ -97,13 +83,13 @@ const updateStats = async (req, res, next) => {
         }
         const newStatsData = {
 
-        id: req.body.id,
-        wins: req.body.wins,
-        losses: req.body.losses,
-        points_scored: req.body.points_scored,
-        first_name:req.body.first_name,
-        last_name:req.body.last_name,
-        age:req.body.age,
+            id: req.body.id,
+            wins: req.body.wins,
+            losses: req.body.losses,
+            points_scored: req.body.points_scored,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.age,
         };
         const newStats = stats.map((player) => {
             if (player.id === Number(req.params.id)) {
@@ -113,14 +99,11 @@ const updateStats = async (req, res, next) => {
             }
         });
         fs.writeFileSync(statsFilePath, JSON.stringify(newStats));
-        res.status(200).json(newStatsData);
+        res.status(200).json([newStatsData]);
     } catch (e) {
         next(e);
     }
 };
-
-router.route("/api/v1/stats/:id").get(getStats).put(updateStats);
-
 
 
 //DELETE Method
@@ -160,5 +143,8 @@ router
 
 router
     .route("/api/v1/stats")
+    .post(createStats)
     .get(getallStats);
-       
+
+
+module.exports = router;

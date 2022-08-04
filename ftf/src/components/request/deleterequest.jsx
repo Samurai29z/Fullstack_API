@@ -25,7 +25,7 @@ export default class DelReq extends Component {
             statInput: event.target.value
         });
         this.setState((state) => ({
-            url: `http://localhost:3000/api/v1/stats/${state.statInput}`
+            url: `http://localhost:8080/api/v1/stats/${state.statInput}`
         }));
     };
     // Function containing the axios request function

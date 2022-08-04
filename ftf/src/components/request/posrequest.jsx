@@ -111,7 +111,7 @@ export default class PostReq extends Component {
 
         var config = {
             method: 'post',
-            url: 'http://localhost:3000/api/v1/stats',
+            url: 'http://localhost:8080/api/v1/stats',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -122,7 +122,7 @@ export default class PostReq extends Component {
 
         axios(config)
             .then(function (response) {
-                this.setState({ output: response.data })
+                self.setState({ output: response.data })
             })
             .catch(function (error) {
                 self.setState({ message: 'faux' })

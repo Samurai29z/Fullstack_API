@@ -107,7 +107,7 @@ export default class PutReq extends Component {
 
         var config = {
             method: 'put',
-            url: `http://localhost:3000/api/v1/stats/${this.state.id}`,
+            url: `http://localhost:8080/api/v1/stats/${this.state.id}`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -118,13 +118,15 @@ export default class PutReq extends Component {
 
         axios(config)
             .then(function (response) {
-                self.setState({ output: response.data })
-                this.setState({ message: 'reussi' })
+                self.setState({
+                    output: response.data,
+                    message: 'reussi'
+                })
             })
             .catch(function (error) {
                 this.setState({ message: 'Not Found!' })
             });
-        }
+    }
 
 
     render() {
@@ -149,9 +151,9 @@ export default class PutReq extends Component {
                             handleAgeChange={this.handleAgeChange}
                         />
                     </div>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
                     <button onClick={this.handleSubmit} id='btn2'>Send</button>
                 </div>
                 <Reqres
@@ -181,25 +183,25 @@ class InputEl extends Component {
             <div className="f-section">
                 <input type="number" min="1" placeholder="Id"
                     value={this.props.id}
-                    onChange={this.props.handleIdChange} /><br/>
+                    onChange={this.props.handleIdChange} /><br />
                 <input type="number" min="1" placeholder="Wins"
                     value={this.props.wins}
-                    onChange={this.props.handleWinsChange} /><br/>
+                    onChange={this.props.handleWinsChange} /><br />
                 <input type="number" min="1" placeholder="Losses"
                     value={this.props.losses}
-                    onChange={this.props.handleLossesChange} /><br/>
+                    onChange={this.props.handleLossesChange} /><br />
                 <input type="number" min="1" placeholder="Points scored"
                     value={this.props.points}
-                    onChange={this.props.handlePointsChange} /><br/>
+                    onChange={this.props.handlePointsChange} /><br />
                 <input type="name" min="1" placeholder="First name"
                     value={this.props.first}
-                    onChange={this.props.handleFirstChange} /><br/>
+                    onChange={this.props.handleFirstChange} /><br />
                 <input type="name" min="1" placeholder="Last name"
                     value={this.props.last}
-                    onChange={this.props.handleLastChange} /><br/>
+                    onChange={this.props.handleLastChange} /><br />
                 <input type="number" min="1" placeholder="Age"
                     value={this.props.age}
-                    onChange={this.props.handleAgeChange} />     
+                    onChange={this.props.handleAgeChange} />
             </div>
         )
     }
