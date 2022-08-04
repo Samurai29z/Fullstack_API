@@ -1,1 +1,20 @@
-[{"id":231,"wins":1,"losses":10,"points_scored":12,"first_name":"DJANKAKO","last_name":"ella","age":22},{"id":27,"wins":14,"losses":26,"points_scored":28,"first_name":"BADATE","last_name":"natalie","age":22}]
+[
+    {
+        "id": 231,
+        "wins": 1,
+        "losses": 10,
+        "points_scored": 12,
+        "first_name": "DJANKAKO",
+        "last_name": "ella",
+        "age": 22
+    },
+    {
+        "id": 27,
+        "wins": 14,
+        "losses": 26,
+        "points_scored": 28,
+        "first_name": "BADATE",
+        "last_name": "natalie",
+        "age": 22
+    }
+]

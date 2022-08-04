@@ -40,7 +40,7 @@ export class Getrequest extends Component {
 
         axios.get(url)
             .then((res) => {
-                self.setState({ stat: res.data });
+                self.setState({ stat: [...res.data] });
             })
             .catch(err => {
                 self.setState({ message: "404! faux" });
@@ -64,7 +64,7 @@ export class Getrequest extends Component {
                         this.state.stat.length === 0 ? this.state.message 
                          :this.state.stat !== [] ? 
                          this.state.stat.map(item =>
-                            <div key={item.id}>
+                            <table key={item.id}>
                                 <p><b>Id:</b> {item.id} </p>
                                 <p><b>Wins:</b> {item.wins} </p>
                                 <p><b>Losses:</b> {item.losses} </p>
@@ -73,7 +73,7 @@ export class Getrequest extends Component {
                                 <p><b>Last_name:</b> {item.last_name} </p>
                                 <p><b>Age:</b> {item.age} </p>
                                 <hr />
-                            </div>
+                            </table>
                         )
                         :  ''
                     }
